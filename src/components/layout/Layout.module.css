@@ -1,0 +1,40 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.orbTopLeft {
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: rgba(0, 82, 255, 0.12);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.orbBottomRight {
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: rgba(0, 82, 255, 0.06);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}

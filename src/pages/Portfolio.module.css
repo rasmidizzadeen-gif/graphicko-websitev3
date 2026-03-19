@@ -1,0 +1,227 @@
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 0%, rgba(124,58,237,0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.heroContent { margin-bottom: 60px; }
+
+.badge {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0,82,255,0.3);
+  background: rgba(0,82,255,0.08);
+  font-size: 13px;
+  font-weight: 600;
+  color: #6ea8ff;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.sub {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 600px;
+}
+
+@media (min-width: 640px) {
+  .stats { grid-template-columns: repeat(4, 1fr); max-width: 100%; }
+}
+
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filter {
+  padding: 9px 22px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filterActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white !important;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Project Card */
+.projectCard {}
+
+.projectImage {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease;
+}
+
+.projectImage:hover {
+  border-color: rgba(255,255,255,0.15);
+}
+
+.projectOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.projectImage:hover .projectOverlay {
+  opacity: 0.85;
+}
+
+.projectMeta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  transform: translateY(6px);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.projectImage:hover .projectMeta {
+  transform: translateY(-48px);
+}
+
+.projectTag {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 9999px;
+  border: 1px solid;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.projectDesc {
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.projectHover {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+
+.projectImage:hover .projectHover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA */
+.cta {
+  padding: 100px 0;
+  background: rgba(255,255,255,0.015);
+  border-top: 1px solid var(--border);
+}
+
+.ctaTitle {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.ctaSub {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
