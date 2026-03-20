@@ -159,6 +159,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 500;
+  vertical-align: middle;
 }
 
 .submitBtn svg {
