@@ -241,16 +241,16 @@ function ServiceCard({ Icon, title, desc }) {
 function PortfolioCard({ tag, title, desc, color }) {
   const ref = useReveal()
   
-  // Map title to relevant images
+  // Map title to relevant images with fallback
   const imageMap = {
-    'Vortex FinTech': 'https://images.unsplash.com/photo-1552664730-d8ca884ca280?w=600&h=450&fit=crop',
-    'Lumina Health App': 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop',
+    'Vortex FinTech': 'https://picsum.photos/600/450?random=1',
+    'Lumina Health App': 'https://picsum.photos/600/450?random=2',
   }
   
   return (
     <div ref={ref} className={`opacity-0 ${styles.portfolioCard}`}>
       <Link to="/portfolio" className={styles.portfolioLink}>
-        <div className={styles.portfolioImgPlaceholder} style={{ background: `url('${imageMap[title] || 'https://images.unsplash.com/photo-1460925895917-aeb19c42ec0d?w=600&h=450&fit=crop'}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className={styles.portfolioImgPlaceholder} style={{ background: `linear-gradient(135deg, rgba(0,82,255,0.1) 0%, rgba(0,82,255,0.05) 100%), url('${imageMap[title] || 'https://picsum.photos/600/450?random=3'}')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#111118' }}>
           <div className={styles.portfolioPattern} />
           <div className={styles.portfolioOverlay} />
           <div className={styles.portfolioInfo}>
