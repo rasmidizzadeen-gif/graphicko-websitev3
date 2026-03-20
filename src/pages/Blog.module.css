@@ -153,7 +153,21 @@
 .newsletterTitle { font-size: clamp(20px, 2.5vw, 28px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
 .newsletterSub { color: var(--text-muted); font-size: 14px; }
 
-.newsletterForm { display: flex; gap: 10px; flex-shrink: 0; }
+.newsletterForm { 
+  display: flex; 
+  flex-direction: column;
+  gap: 10px; 
+  width: 100%;
+  flex-shrink: 0; 
+}
+
+@media (min-width: 768px) {
+  .newsletterForm { 
+    flex-direction: row;
+    width: auto;
+  }
+}
+
 .newsletterInput {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -163,8 +177,17 @@
   font-size: 14px;
   font-family: var(--font-body);
   outline: none;
+  width: 100%;
   min-width: 220px;
   transition: border-color 0.2s;
 }
+
+@media (min-width: 768px) {
+  .newsletterInput {
+    width: auto;
+    min-width: 220px;
+  }
+}
+
 .newsletterInput:focus { border-color: var(--primary); }
 .newsletterInput::placeholder { color: var(--text-faint); }
