@@ -79,6 +79,16 @@ const POSTS = [
 export default function Blog() {
   const featured = POSTS.find(p => p.featured)
   const rest = POSTS.filter(p => !p.featured)
+  
+  // Map categories to relevant unsplash images
+  const categoryImages = {
+    'Branding': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=350&fit=crop',
+    'Performance Marketing': 'https://images.unsplash.com/photo-1460925895917-aeb19c42ec0d?w=500&h=350&fit=crop',
+    'SEO': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=350&fit=crop',
+    'Design': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=350&fit=crop',
+    'Strategy': 'https://images.unsplash.com/photo-1552664730-d8ca884ca280?w=500&h=350&fit=crop',
+    'UI/UX': 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=350&fit=crop',
+  }
 
   return (
     <>
@@ -99,7 +109,7 @@ export default function Blog() {
           {featured && (
             <Reveal>
               <div className={`card ${styles.featuredCard}`}>
-                <div className={styles.featuredVisual} style={{ background: `${featured.color}15` }}>
+                <div className={styles.featuredVisual} style={{ background: `url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                   <div className={styles.featuredPattern} />
                   <div className={styles.featuredLabel} style={{ color: featured.color, borderColor: `${featured.color}30`, background: `${featured.color}12` }}>
                     Featured · {featured.category}
@@ -126,7 +136,7 @@ export default function Blog() {
             {rest.map((post, i) => (
               <Reveal key={post.id} delay={i * 0.07}>
                 <div className={`card ${styles.postCard}`}>
-                  <div className={styles.postVisual} style={{ background: `${post.color}15`, backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+                  <div className={styles.postVisual} style={{ background: `url('${categoryImages[post.category]}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                     <span className={styles.postCategory} style={{ color: post.color, borderColor: `${post.color}30`, background: `${post.color}12` }}>
                       {post.category}
                     </span>

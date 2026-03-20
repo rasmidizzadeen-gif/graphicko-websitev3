@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Contact.module.css'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', service: '', budget: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({})
+
+  // Scroll to form if coming from hash
+  useEffect(() => {
+    const scrollToForm = () => {
+      const formElement = document.getElementById('contact-form')
+      if (formElement) {
+        setTimeout(() => {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }, 100)
+      }
+    }
+
+    if (window.location.hash === '#contact-form') {
+      scrollToForm()
+    }
+  }, [])
 
   const validate = () => {
     const errs = {}
@@ -43,7 +59,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="section">
+      <section className="section" id="contact-form">
         <div className="container">
           <div className={styles.layout}>
             {/* Info */}

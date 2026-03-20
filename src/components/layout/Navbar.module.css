@@ -16,6 +16,11 @@
   padding: 14px 0;
 }
 
+[data-theme="light"] .scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .inner {
   display: flex;
   align-items: center;
@@ -112,6 +117,34 @@
 
 @media (min-width: 1024px) {
   .desktopActions { display: flex; }
+}
+
+/* Theme toggle */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.themeToggle:hover {
+  background: var(--primary-subtle);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+.themeToggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Mobile toggle */

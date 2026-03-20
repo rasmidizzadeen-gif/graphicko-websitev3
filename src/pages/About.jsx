@@ -152,7 +152,7 @@ export default function About() {
           <RevealBox>
             <h2 className={styles.ctaTitle}>Want to work with us?</h2>
             <p className={styles.ctaSub}>We're always looking for ambitious brands ready to grow.</p>
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <button className="btn btn-primary btn-lg">Get in Touch</button>
             </Link>
           </RevealBox>

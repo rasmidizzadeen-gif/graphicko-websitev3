@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
 const COMPANY_LINKS = [
   { label: 'About Us', to: '/about' },
   { label: 'Services', to: '/services' },
@@ -89,7 +93,7 @@ export default function Footer() {
         <div className={styles.grid}>
           {/* Brand */}
           <div className={styles.brand}>
-            <Link to="/" className={styles.logo}>
+            <Link to="/" onClick={scrollToTop} className={styles.logo}>
               <div className={styles.logoIcon}><div className={styles.logoInner} /></div>
               <span className={styles.logoText}>Graphicko<span className={styles.logoDot}>.</span></span>
             </Link>
@@ -113,7 +117,7 @@ export default function Footer() {
             <h4 className={styles.groupTitle}>Company</h4>
             <ul className={styles.linkList}>
               {COMPANY_LINKS.map((l) => (
-                <li key={l.label}><Link to={l.to} className={styles.footerLink}>{l.label}</Link></li>
+                <li key={l.label}><Link to={l.to} onClick={scrollToTop} className={styles.footerLink}>{l.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -123,7 +127,7 @@ export default function Footer() {
             <h4 className={styles.groupTitle}>Services</h4>
             <ul className={styles.linkList}>
               {SERVICE_LINKS.map((l) => (
-                <li key={l.label}><Link to={l.to} className={styles.footerLink}>{l.label}</Link></li>
+                <li key={l.label}><Link to={l.to} onClick={scrollToTop} className={styles.footerLink}>{l.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -145,9 +149,7 @@ export default function Footer() {
                   required
                 />
                 <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                  </svg>
+                  →
                 </button>
               </form>
             )}

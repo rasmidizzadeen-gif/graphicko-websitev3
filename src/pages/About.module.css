@@ -9,6 +9,10 @@
   background: radial-gradient(ellipse at 40% 0%, rgba(124,58,237,0.1) 0%, transparent 70%);
   z-index: -1;
 }
+
+[data-theme="light"] .heroBg {
+  background: radial-gradient(ellipse at 40% 0%, rgba(124, 58, 237, 0.1) 0%, rgba(0, 82, 255, 0.05) 50%, transparent 70%);
+}
 .badge {
   display: inline-block;
   padding: 6px 18px;
@@ -21,6 +25,12 @@
   margin-bottom: 24px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+[data-theme="light"] .badge {
+  color: var(--primary);
+  border-color: rgba(0, 82, 255, 0.3);
+  background: rgba(0, 82, 255, 0.1);
 }
 .title {
   font-size: clamp(40px, 6vw, 72px);
@@ -60,7 +70,11 @@
 
 .storyVisual {
   position: relative;
-  height: 400px;
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .storyVisual { height: 400px; }
 }
 .storyOrb {
   position: absolute;
@@ -74,12 +88,20 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px 24px;
-  min-width: 140px;
+  padding: 16px 20px;
+  min-width: 120px;
 }
-.storyCard { top: 10%; left: 5%; }
-.storyCard2 { top: 40%; right: 5%; }
-.storyCard3 { bottom: 10%; left: 20%; }
+
+@media (min-width: 768px) {
+  .storyCard, .storyCard2, .storyCard3 {
+    padding: 20px 24px;
+    min-width: 140px;
+  }
+}
+
+.storyCard { top: 8%; left: 2%; }
+.storyCard2 { top: 45%; right: 2%; }
+.storyCard3 { bottom: 8%; left: 15%; }
 
 .storyCardStat {
   font-family: var(--font-display);

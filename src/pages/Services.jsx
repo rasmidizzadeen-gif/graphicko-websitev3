@@ -166,7 +166,7 @@ export default function Services() {
           <RevealBox>
             <h2 className={styles.ctaTitle}>Ready to get started?</h2>
             <p className={styles.ctaSub}>Let's talk about how we can grow your brand together.</p>
-            <Link to="/contact">
+            <Link to="/contact#contact-form">
               <button className="btn btn-primary btn-lg">Book a Free Consultation</button>
             </Link>
           </RevealBox>

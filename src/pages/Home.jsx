@@ -121,7 +121,7 @@ export default function Home() {
               We blend stunning visual aesthetics with data-driven marketing strategies to elevate ambitious brands to category leaders.
             </p>
             <div className={`${styles.heroActions} ${styles.heroItem} delay-4 opacity-0`}>
-              <Link to="/contact">
+              <Link to="/contact#contact-form">
                 <button className="btn btn-primary btn-lg">
                   Start a Project <ArrowRight />
                 </button>
@@ -184,7 +184,7 @@ export default function Home() {
               tag="UI/UX Design"
               title="Lumina Health App"
               desc="Mobile app design and design system"
-              color="#7c3aed"
+              color="#0052ff"
             />
           </div>
           <div style={{ textAlign: 'center', marginTop: 48 }}>
@@ -215,7 +215,7 @@ export default function Home() {
           <p className={styles.ctaSub}>
             Stop settling for average. Let's build a brand and marketing engine that leaves your competitors behind.
           </p>
-          <Link to="/contact">
+          <Link to="/contact#contact-form">
             <button className="btn btn-primary btn-lg" style={{ fontSize: 18, padding: '20px 44px' }}>
               Let's Talk About Your Project <ArrowRight size={22} />
             </button>
@@ -240,10 +240,17 @@ function ServiceCard({ Icon, title, desc }) {
 
 function PortfolioCard({ tag, title, desc, color }) {
   const ref = useReveal()
+  
+  // Map title to relevant images
+  const imageMap = {
+    'Vortex FinTech': 'https://images.unsplash.com/photo-1552664730-d8ca884ca280?w=600&h=450&fit=crop',
+    'Lumina Health App': 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=450&fit=crop',
+  }
+  
   return (
     <div ref={ref} className={`opacity-0 ${styles.portfolioCard}`}>
       <Link to="/portfolio" className={styles.portfolioLink}>
-        <div className={styles.portfolioImgPlaceholder} style={{ background: `linear-gradient(135deg, ${color}30 0%, ${color}10 100%)` }}>
+        <div className={styles.portfolioImgPlaceholder} style={{ background: `url('${imageMap[title] || 'https://images.unsplash.com/photo-1460925895917-aeb19c42ec0d?w=600&h=450&fit=crop'}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <div className={styles.portfolioPattern} />
           <div className={styles.portfolioOverlay} />
           <div className={styles.portfolioInfo}>

@@ -87,7 +87,7 @@ export default function CaseStudies() {
                     <div className={styles.caseClient}>{c.client}</div>
                     <h2 className={styles.caseHeadline}>{c.headline}</h2>
                     <p className={styles.caseDesc}>{c.desc}</p>
-                    <Link to="/contact">
+                    <Link to="/contact#contact-form">
                       <button className="btn btn-outline" style={{ marginTop: 24 }}>Start a Similar Project</button>
                     </Link>
                   </div>
@@ -111,7 +111,7 @@ export default function CaseStudies() {
           <Reveal>
             <h2 className={styles.ctaTitle}>Want results like these?</h2>
             <p className={styles.ctaSub}>Let's talk about what we can do for your business.</p>
-            <Link to="/contact"><button className="btn btn-primary btn-lg">Get a Free Strategy Call</button></Link>
+            <Link to="/contact#contact-form"><button className="btn btn-primary btn-lg">Get a Free Strategy Call</button></Link>
           </Reveal>
         </div>
       </section>

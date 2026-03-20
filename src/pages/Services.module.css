@@ -10,7 +10,9 @@
   background: radial-gradient(ellipse at 60% 0%, rgba(0,82,255,0.12) 0%, transparent 70%);
   z-index: -1;
 }
-
+[data-theme="light"] .heroBg {
+  background: radial-gradient(ellipse at 60% 0%, rgba(0, 82, 255, 0.12) 0%, rgba(124, 58, 237, 0.05) 50%, transparent 70%);
+}
 .badge {
   display: inline-block;
   padding: 6px 18px;
@@ -23,6 +25,12 @@
   margin-bottom: 24px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+[data-theme="light"] .badge {
+  color: var(--primary);
+  border-color: rgba(0, 82, 255, 0.3);
+  background: rgba(0, 82, 255, 0.1);
 }
 
 .title {
@@ -51,11 +59,15 @@
 @media (min-width: 1024px) { .servicesGrid { grid-template-columns: repeat(3, 1fr); } }
 
 .serviceCard {
-  padding: 32px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   height: 100%;
+}
+
+@media (min-width: 768px) {
+  .serviceCard { padding: 32px; }
 }
 
 .serviceIconWrap {
